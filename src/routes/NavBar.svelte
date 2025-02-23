@@ -6,12 +6,9 @@
         ToolbarButton,
         Tooltip,
         Avatar,
-        NavHamburger,
         Dropdown,
         DropdownItem,
         DropdownHeader,
-        Breadcrumb,
-        BreadcrumbItem,
     } from "flowbite-svelte";
     import { GithubSolid } from "flowbite-svelte-icons";
     import { SignIn, SignOut } from "@auth/sveltekit/components";
@@ -26,18 +23,6 @@
             Myeline
         </span>
     </NavBrand>
-    {#if $page.data.session}
-        <Breadcrumb class="pl-4">
-            <BreadcrumbItem href="/projects">Projects</BreadcrumbItem>
-            {#if $page.data.project}
-                {#await $page.data.project then project}
-                    <BreadcrumbItem href={`/projects/${project.id}`}
-                        >{project.name}</BreadcrumbItem
-                    >
-                {/await}
-            {/if}
-        </Breadcrumb>
-    {/if}
     <div class="flex items-center ml-auto">
         <ToolbarButton
             size="lg"
@@ -64,7 +49,6 @@
                     src={$page.data.session.user?.image ?? ""}
                     class="cursor-pointer"
                 />
-                <NavHamburger class="w-full md:flex md:w-auto md:order-1" />
             </div>
             <Dropdown placement="bottom" triggeredBy="#avatar-menu">
                 <DropdownHeader>
@@ -78,7 +62,7 @@
                 <DropdownItem><SignOut>Sign out</SignOut></DropdownItem>
             </Dropdown>
         {:else}
-            <SignIn provider="keycloak" />
+            <SignIn provider="github" />
         {/if}
     </div>
 </Navbar>
