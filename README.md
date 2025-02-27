@@ -1,5 +1,7 @@
 # Myeline
 
+A frontend for https://github.com/juliendoutre/axon.
+
 ## Development
 
 ### Run locally
