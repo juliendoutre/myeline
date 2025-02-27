@@ -23,7 +23,7 @@
 	"dependencies": {
 		"@auth/sveltekit": "^1.8.0",
 		"@tailwindcss/vite": "^4.0.9",
-		"flowbite-svelte": "^0.47.4",
+		"flowbite-svelte": "^0.48.4",
 		"flowbite-svelte-icons": "^2.0.2"
 	}
 }
