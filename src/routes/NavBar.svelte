@@ -62,7 +62,7 @@
                 <DropdownItem><SignOut>Sign out</SignOut></DropdownItem>
             </Dropdown>
         {:else}
-            <SignIn provider="github" />
+            <SignIn provider="gitlab" />
         {/if}
     </div>
 </Navbar>
